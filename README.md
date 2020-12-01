@@ -1,6 +1,9 @@
 # xousql-docker
 xo/usql docker
 
+## download oracle client (if need oracle)
+[参考“Install Oracle Instant Client and SDK”部分](https://gist.github.com/vicmx/b4968ea72a57def8247fcdb0c51efe28)
+
 ```
 # build docker
 docker build -t xousql .
