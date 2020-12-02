@@ -24,13 +24,13 @@ docker build -t xousql .
 # if exists
 docker rm -f xousql
 
-# run and enter the container
-docker run -d --name xousql xousql -f && docker exec -it xousql bash
+# run a container
+docker run --name xousql -dt xousql [dburl] # can enter by 'docker exec'
+docker run --name xousql -it xousql [dburl] # exited when '\q'
 
-# mount volume
-docker run -d --name xousql -v $PWD/sql:/data/sql xousql
-
-# after mount, you can create sql file to be execute by usql.
+# run as commond
+# put 1.sql at $PWD/sql, this will generate the query result to 1.csv at result/1.csv
+docker run --name xousql -d -v $PWD/sql:/data xousql -C -f 1.sql -o result/1.csv [dburl]
 ```
 
 ## At last
