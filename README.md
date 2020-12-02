@@ -10,6 +10,7 @@ if need oracle, please:
 put 3 files downloaded to the Dockerfile directory:
 
 ```
+# /path/to/Dockerfile/oracle/
 unixODBC-2.3.1.tar.gz
 instantclient-basic-linux.x64-12.1.0.2.0.zip
 instantclient-sdk-linux.x64-12.1.0.2.0.zip
