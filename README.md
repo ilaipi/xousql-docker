@@ -1,11 +1,11 @@
 # xousql-docker
-xo/usql docker
+[xo/usql](https://github.com/xo/usql) docker
 
 ## First, build docker image
 
 if need oracle, please:  
 1, [InstallingUnixODBC](https://github.com/alexbrainman/odbc/wiki/InstallingUnixODBC)    
-2, [参考“Install Oracle Instant Client and SDK”部分](https://gist.github.com/vicmx/b4968ea72a57def8247fcdb0c51efe28)
+2, [@See "Install Oracle Instant Client and SDK"](https://gist.github.com/vicmx/b4968ea72a57def8247fcdb0c51efe28)
 
 put 3 files downloaded to the Dockerfile directory:
 
