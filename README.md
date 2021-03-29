@@ -40,7 +40,7 @@ you can save the container to a tar file, and transfer to the server without int
 and then load the tar file to run a docker container.
 
 ```
-docker save -o xosql.tar xosql
+docker save -o xosql.tar xousql
 
-docker loda -i xosql.tar xosql
+docker loda -i xosql.tar xousql
 ```
