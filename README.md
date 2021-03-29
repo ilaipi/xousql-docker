@@ -42,5 +42,5 @@ and then load the tar file to run a docker container.
 ```
 docker save -o xosql.tar xousql
 
-docker loda -i xosql.tar xousql
+docker load -i xosql.tar
 ```
