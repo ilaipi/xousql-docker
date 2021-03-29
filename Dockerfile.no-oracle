@@ -1,0 +1,28 @@
+FROM golang:1.15.5-buster as build
+
+# for China User
+RUN ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+RUN echo \
+# for China User
+"deb http://mirrors.aliyun.com/debian buster main contrib non-free" \
+"deb http://mirrors.aliyun.com/debian buster-proposed-updates main contrib non-free" \
+"deb http://mirrors.aliyun.com/debian buster-updates main contrib non-free" \
+"deb http://mirrors.aliyun.com/debian-security/ buster/updates main non-free contrib" \
+"deb http://ftp.de.debian.org/debian buster main" \
+> /etc/apt/sources.list
+
+ARG USQL_VERSION=0.7.8
+
+RUN go env -w GO111MODULE=on
+RUN go env -w GOPROXY=https://goproxy.cn,direct
+
+RUN apt-get update && apt-get install -y gettext-base tzdata libaio1 unzip && apt-get -y autoclean
+
+RUN go get -u -tags all github.com/xo/usql@v${USQL_VERSION}
+
+FROM build
+
+WORKDIR /data
+
+ENTRYPOINT ["usql"]
